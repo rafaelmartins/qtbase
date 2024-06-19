@@ -1208,6 +1208,7 @@ if(QT_FEATURE_permissions AND APPLE)
             platform/darwin/qdarwinpermissionplugin.mm
         PLUGIN_TYPES
             permissions
+        NO_UNITY_BUILD
     )
 
     foreach(permission Camera Microphone Bluetooth Contacts Calendar Location)
@@ -1217,6 +1218,7 @@ if(QT_FEATURE_permissions AND APPLE)
     # Camera
     qt_internal_extend_target(QDarwinCameraPermissionPlugin
         LIBRARIES ${FWAVFoundation}
+        NO_UNITY_BUILD
     )
     set_property(TARGET QDarwinCameraPermissionPlugin PROPERTY
         _qt_darwin_permissison_separate_request TRUE
@@ -1225,6 +1227,7 @@ if(QT_FEATURE_permissions AND APPLE)
     # Microphone
     qt_internal_extend_target(QDarwinMicrophonePermissionPlugin
         LIBRARIES ${FWAVFoundation}
+        NO_UNITY_BUILD
     )
     set_property(TARGET QDarwinMicrophonePermissionPlugin PROPERTY
         _qt_darwin_permissison_separate_request TRUE
@@ -1233,6 +1236,7 @@ if(QT_FEATURE_permissions AND APPLE)
     # Bluetooth
     qt_internal_extend_target(QDarwinBluetoothPermissionPlugin
         LIBRARIES ${FWCoreBluetooth}
+        NO_UNITY_BUILD
     )
     set_property(TARGET QDarwinBluetoothPermissionPlugin PROPERTY
         _qt_info_plist_usage_descriptions "NSBluetoothAlwaysUsageDescription"
@@ -1241,11 +1245,13 @@ if(QT_FEATURE_permissions AND APPLE)
     # Contacts
     qt_internal_extend_target(QDarwinContactsPermissionPlugin
         LIBRARIES ${FWContacts}
+        NO_UNITY_BUILD
     )
 
     # Calendar
     qt_internal_extend_target(QDarwinCalendarPermissionPlugin
         LIBRARIES ${FWEventKit}
+        NO_UNITY_BUILD
     )
     set_property(TARGET QDarwinCalendarPermissionPlugin PROPERTY
         _qt_info_plist_usage_descriptions "NSCalendarsUsageDescription"
@@ -1254,6 +1260,7 @@ if(QT_FEATURE_permissions AND APPLE)
     # Location
     qt_internal_extend_target(QDarwinLocationPermissionPlugin
         LIBRARIES ${FWCoreLocation}
+        NO_UNITY_BUILD
     )
     if(MACOS)
         set_property(TARGET QDarwinLocationPermissionPlugin PROPERTY
